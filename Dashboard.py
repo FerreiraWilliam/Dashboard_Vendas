@@ -39,15 +39,6 @@ def login():
 login()
 
 # -----------------------------
-# IMPORTAÇÕES
-# -----------------------------
-import requests
-import pandas as pd
-import streamlit as st
-import plotly.express as px
-import numpy as np
-
-# -----------------------------
 # CONFIGURAÇÃO DO APP
 # -----------------------------
 st.set_page_config(
