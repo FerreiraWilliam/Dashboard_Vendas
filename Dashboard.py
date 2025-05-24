@@ -1,9 +1,17 @@
 # -----------------------------
+# IMPORTAÇÕES
+# -----------------------------
+import requests
+import pandas as pd
+import streamlit as st
+import plotly.express as px
+import numpy as np
+
+
+# -----------------------------
 # AUTENTICAÇÃO COM USUÁRIO E SENHA
 # -----------------------------
-import streamlit as st
 
-# Dicionário de usuários e senhas (poderia vir de um arquivo seguro)
 USERS = {
     "admin": "9d0cb87a",
     "keyvilla": "aguiar123",
