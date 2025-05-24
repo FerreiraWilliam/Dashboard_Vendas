@@ -1,4 +1,36 @@
 # -----------------------------
+# AUTENTICAÇÃO COM USUÁRIO E SENHA
+# -----------------------------
+import streamlit as st
+
+# Dicionário de usuários e senhas (poderia vir de um arquivo seguro)
+USERS = {
+    "admin": "9d0cb87a",
+    "keyvilla": "aguiar123",
+    "ana": "minhasenha789"
+}
+
+def login():
+    if "authenticated" not in st.session_state:
+        st.session_state["authenticated"] = False
+
+    if not st.session_state["authenticated"]:
+        st.title("Login 🔒")
+        username = st.text_input("Usuário")
+        password = st.text_input("Senha", type="password")
+        if st.button("Entrar"):
+            if USERS.get(username) == password:
+                st.session_state["authenticated"] = True
+                st.session_state["username"] = username
+                st.success(f"Bem-vindo, {username}!")
+                st.rerun()
+            else:
+                st.error("Usuário ou senha incorretos.")
+        st.stop()
+
+login()
+
+# -----------------------------
 # IMPORTAÇÕES
 # -----------------------------
 import requests
